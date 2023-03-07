@@ -4,4 +4,6 @@ CREATE USER 'andy'@'%' IDENTIFIED BY 'XXX';
 GRANT ALL ON *.* TO 'andy'@'%';
 CREATE USER 'ines'@'%' IDENTIFIED BY 'XXX';
 GRANT ALL ON *.* TO 'ines'@'%';
+CREATE USER 'temp'@'%' IDENTIFIED BY 'XXX';
+GRANT SELECT on *.* to 'XXX'@'%';
 FLUSH PRIVILEGES;
