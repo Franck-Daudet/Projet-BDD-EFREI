@@ -1,0 +1,7 @@
+CREATE USER 'manon'@'%' IDENTIFIED BY 'XXX';
+GRANT ALL ON  *.*  TO 'manon'@'%';
+CREATE USER 'andy'@'%' IDENTIFIED BY 'XXX';
+GRANT ALL ON *.* TO 'andy'@'%';
+CREATE USER 'ines'@'%' IDENTIFIED BY 'XXX';
+GRANT ALL ON *.* TO 'ines'@'%';
+FLUSH PRIVILEGES;
