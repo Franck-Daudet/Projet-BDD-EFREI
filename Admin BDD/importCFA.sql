@@ -1,4 +1,4 @@
-create table Organisme
+create table CFA
 (
     numero_convention               VARCHAR(32) not null
         primary key
@@ -23,3 +23,8 @@ create table Organisme
 )
     comment 'table regroupant les CFA';
 
+ALTER TABLE CFA DROP COLUMN dpt;
+ALTER TABLE CFA DROP COLUMN nom_cfa_conventionnel;
+ALTER TABLE CFA DROP COLUMN adresse_cfa_conventionnel;
+ALTER TABLE CFA DROP COLUMN adresse_cfa_conventionnel_suite;
+ALTER TABLE CFA DROP COLUMN wgs84;

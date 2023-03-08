@@ -31,3 +31,8 @@ create table Etablissement
           labelGeneration2024                   TEXT        null,
           URLetIDOnisep                         TEXT        null
       )
+
+ALTER TABLE Etablissement DROP COLUMN cedex;
+ALTER TABLE Etablissement DROP COLUMN numcommune;
+ALTER TABLE Etablissement DROP COLUMN journeesportesouvertes;
+ALTER TABLE Etablissement DROP COLUMN arrondissement;
