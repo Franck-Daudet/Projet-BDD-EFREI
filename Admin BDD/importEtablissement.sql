@@ -36,7 +36,15 @@ ALTER TABLE Etablissement DROP COLUMN cedex;
 ALTER TABLE Etablissement DROP COLUMN numcommune;
 ALTER TABLE Etablissement DROP COLUMN journeesportesouvertes;
 ALTER TABLE Etablissement DROP COLUMN arrondissement;
-# TODO Supprimer Etablissement sans UAI
+
+# DONE Supprimer Etablissement sans UAI
+delete from Etablissement where UAI=' ' OR UAI IS NULL;
+alter table Etablissement
+    modify UAI text not null;
+alter table Etablissement
+    modify UAI VARCHAR(32) not null;
+
+
 # TODO Rajouter ID pour Etablissement
 # TODO créer une table organisme de tutelle et rajouter une clé etrangère dans Etablissement
 # TODO créer une table organisme de université de rattachement et rajouter une clé etrangère dans Etablissement
