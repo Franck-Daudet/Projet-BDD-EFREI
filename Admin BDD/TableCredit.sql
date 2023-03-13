@@ -16,3 +16,5 @@ VALUES ('AMEZIANE', 'Ines', 21);
 
 INSERT INTO Main.Credit (nom, prenom, age)
 VALUES ('BRIENT', 'Manon', 20);
+
+alter table Credit add constraint primary key (nom);
