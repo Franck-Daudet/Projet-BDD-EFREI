@@ -36,3 +36,12 @@ ALTER TABLE Etablissement DROP COLUMN cedex;
 ALTER TABLE Etablissement DROP COLUMN numcommune;
 ALTER TABLE Etablissement DROP COLUMN journeesportesouvertes;
 ALTER TABLE Etablissement DROP COLUMN arrondissement;
+# TODO Supprimer Etablissement sans UAI
+# TODO Rajouter ID pour Etablissement
+# TODO créer une table organisme de tutelle et rajouter une clé etrangère dans Etablissement
+# TODO créer une table organisme de université de rattachement et rajouter une clé etrangère dans Etablissement
+# TODO etablissmeent lié libelé en clé etrangeree
+# TODO table académie
+# TODO transformer generaction24 en boolean
+# TODO clean CFA et Etablissement
+# TODO changer des colonnes en Enum
