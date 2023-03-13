@@ -44,8 +44,9 @@ alter table Etablissement
 alter table Etablissement
     modify UAI VARCHAR(32) not null;
 
-
-# TODO Rajouter ID pour Etablissement
+# DONE Rajouter ID pour Etablissement
+ALTER TABLE Etablissement ADD id MEDIUMINT NOT NULL AUTO_INCREMENT KEY;
+alter table Etablissement drop primary key, add constraint primary key (id);
 # TODO créer une table organisme de tutelle et rajouter une clé etrangère dans Etablissement
 # TODO créer une table organisme de université de rattachement et rajouter une clé etrangère dans Etablissement
 # TODO etablissmeent lié libelé en clé etrangeree
