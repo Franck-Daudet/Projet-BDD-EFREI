@@ -76,6 +76,13 @@ alter table Etablissement
 # TODO créer une table organisme de université de rattachement et rajouter une clé etrangère dans Etablissement
 # TODO etablissmeent lié libelé en clé etrangeree
 # TODO table académie
-# TODO transformer generaction24 en boolean
+# DONE transformer generaction24 en boolean
+alter table Etablissement
+    RENAME COLUMN labelGénération2024 to labelGeneration2024;
+UPDATE Etablissement
+SET labelGeneration2024 = IF(labelGeneration2024 = 'oui', 1, 0);
+ALTER TABLE Etablissement
+MODIFY COLUMN labelGeneration2024 BOOL NOT NULL;
+
 # TODO clean CFA et Etablissement
 # TODO changer des colonnes en Enum
