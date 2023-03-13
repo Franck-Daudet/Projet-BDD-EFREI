@@ -47,7 +47,32 @@ alter table Etablissement
 # DONE Rajouter ID pour Etablissement
 ALTER TABLE Etablissement ADD id MEDIUMINT NOT NULL AUTO_INCREMENT KEY;
 alter table Etablissement drop primary key, add constraint primary key (id);
-# TODO créer une table organisme de tutelle et rajouter une clé etrangère dans Etablissement
+
+# DONE créer une table organisme de tutelle et rajouter une clé etrangère dans Etablissement
+
+create table organisme_tutelle(
+    nom_organisme           TEXT
+);
+insert into organisme_tutelle (nom_organisme)
+    select distinct tutelle from Etablissement where tutelle is not null;
+alter table organisme_tutelle
+    modify nom_organisme VARCHAR(128) null;
+ALTER TABLE organisme_tutelle ADD id int NOT NULL AUTO_INCREMENT KEY;
+
+UPDATE Etablissement E
+JOIN organisme_tutelle O ON E.tutelle = O.nom_organisme
+set E.tutelle = O.id;
+
+alter table Etablissement
+    RENAME COLUMN tutelle to id_tutelle;
+
+alter table Etablissement
+    modify id_tutelle int;
+
+alter table Etablissement
+    add constraint foreign key (id_tutelle) references organisme_tutelle(id);
+
+
 # TODO créer une table organisme de université de rattachement et rajouter une clé etrangère dans Etablissement
 # TODO etablissmeent lié libelé en clé etrangeree
 # TODO table académie
