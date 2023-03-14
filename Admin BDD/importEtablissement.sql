@@ -115,8 +115,8 @@ alter table Etablissement
     RENAME COLUMN labelGénération2024 to labelGeneration2024;
 UPDATE Etablissement
 SET labelGeneration2024 = IF(labelGeneration2024 = 'oui', 1, 0);
-ALTER TABLE Etablissement
-MODIFY COLUMN labelGeneration2024 BOOL NOT NULL;
+alter table Etablissement
+    modify labelGeneration2024 boolean not null;
 
 # TODO clean CFA et Etablissement
 # TODO changer des colonnes en Enum
