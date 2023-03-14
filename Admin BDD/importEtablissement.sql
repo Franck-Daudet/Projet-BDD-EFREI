@@ -39,6 +39,10 @@ ALTER TABLE Etablissement DROP COLUMN cedex;
 ALTER TABLE Etablissement DROP COLUMN numcommune;
 ALTER TABLE Etablissement DROP COLUMN journeesportesouvertes;
 ALTER TABLE Etablissement DROP COLUMN arrondissement;
+ALTER TABLE Etablissement DROP COLUMN universitederattachementIDetURLOnisep;
+ALTER TABLE Etablissement DROP COLUMN etablissementsliesURLetIDOnisep;
+ALTER TABLE Etablissement DROP COLUMN URLetIDOnisep;
+alter table Etablissement DROP COLUMN boitepostale;
 
 # DONE Supprimer Etablissement sans UAI
 delete from Etablissement where UAI=' ' OR UAI IS NULL;
