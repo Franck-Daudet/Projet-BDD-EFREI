@@ -7,15 +7,11 @@ mydb=mysql.connector.connect(
     passwd="mbap",
     database="Main"
     )
-<<<<<<< HEAD
 request= "select * from Etablissement where lower(commune) <>'paris';"
-myc = mydb.cursor()
-myc.execute(request)
-=======
+request_Etablissement_EduNat = "SELECT * FROM Etablissement WHERE id_tutelle = (SELECT id FROM organisme_tutelle where lower(nom_organisme) = \"ministère chargé de l'éducation nationale et de la jeunesse\");"
 
 myc = mydb.cursor()
-myc.execute("select * from Credit")
->>>>>>> main
+myc.execute(request)
 myres = myc.fetchall()
 for x in myres:
     print(x)
