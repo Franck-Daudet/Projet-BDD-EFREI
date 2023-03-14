@@ -12,4 +12,4 @@ myc = mydb.cursor()
 myc.execute("select * from Credit")
 myres = myc.fetchall()
 for x in myres:
-    print (x)
+    print(x)
