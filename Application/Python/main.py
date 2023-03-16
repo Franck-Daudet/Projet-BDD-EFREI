@@ -1,22 +1,34 @@
 import mysql.connector
-import plotly.express as px
-from requests import requests
+from requests_mode import requests_mode
+from stats_mode import display_graph
+from art import tprint
 import os
 
+"""
+    Connexion à la base de données
+"""
 mydb=mysql.connector.connect(
-    host="143.42.63.50",
-    user="temp",
-    passwd="temp",
-    database="Main"
+    host="XXX.XXX.XXX.XXX",
+    user="XXXX",
+    passwd="XXXX",
+    database="XXXX"
     )
-print("Bienvenue sur nom_projet")
+
+welcome = tprint("MyHessQL",font="Doh",chr_ignore=True)
+print("Bienvenue sur MyHessQL\n")
 while(True):
     print("Sélectionnner un mode:\n")
-    print("1: Requêtes SQL\n2: Statistiques\n0: Stopper l'application")
+    print("0: Stopper l'application\n1: Requêtes SQL\n2: Statistiques")
     mode = input("> ")
-    if mode == '1':
-        os.system('cls||clear')
-        requests()
-    # if mode == 2 :
+    
+    #Fermer l'application
     if mode == '0':
         exit()
+    #Lancer le mode Requêtes SQL
+    if mode == '1':
+        os.system('cls||clear')
+        requests_mode(mydb)
+    #Lancer le mode Statistiques
+    if mode == '2' :
+        os.system('cls||clear')
+        display_graph(mydb)
