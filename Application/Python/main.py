@@ -14,8 +14,8 @@ mydb=mysql.connector.connect(
     database="XXXX"
     )
 
-welcome = tprint("MyHessQL",font="Doh",chr_ignore=True)
-print("Bienvenue sur MyHessQL\n")
+welcome = tprint("Insertion Stats",chr_ignore=True)
+print("Bienvenue sur Insertion Stats\n")
 while(True):
     print("Sélectionnner un mode:\n")
     print("0: Stopper l'application\n1: Requêtes SQL\n2: Statistiques")
@@ -23,6 +23,7 @@ while(True):
     
     #Fermer l'application
     if mode == '0':
+        mydb.close()
         exit()
     #Lancer le mode Requêtes SQL
     if mode == '1':
